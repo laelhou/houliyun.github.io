@@ -1,38 +1,28 @@
+const { nav, siderbar } = require('./siderbar/index');
+const path = require('path');
 module.exports = {
-  title: 'houliyun',
-  description: 'Hello, my friend!',
-  head: [
-    [
-      'link',
-      {
-        rel: 'icon',
-        href: `/favicon.ico`
+  // 相对路径
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@assets': path.resolve(__dirname, '../assets')
       }
-    ]
-  ],
-  themeConfig: {
-    nav: [
-      { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/' },
-      {
-        text: '语言',
-        items: [
-          { text: '中文', link: '/language/chinese' },
-          { text: '英文', link: '/language/english' }
-        ]
-      }
-      // { text: 'External', link: 'https://www.baidu.com' }
-    ],
-    sidebarDepth: 2, //菜单深度2级，它将同时提取h2和h3标题
-    sidebar: [
-      {
-        title: '指南',
-        collapsable: false,
-        children: ['/guide/']
-      }
-    ]
+    }
   },
-  dest: './docs/.vuepress/dist',
+
+  title: '小憩时光',
+  description: '小憩时光',
+  themeConfig: {
+    repo: 'http://github.com/laelhou',
+    //导航栏链接
+    nav: nav,
+    sidebarDepth: 2, //菜单深度2级，它将同时提取h2和h3标题
+    //侧边栏
+    sidebar: siderbar
+  },
+  base: '', //打包出来的路径
+  dest: './docs/.vuepress/dist', //打包输入的文件路径前缀
   ga: '',
   evergreen: true
+  // lastUpdated: '最后更新时间' // 最后更新时间
 };

@@ -1,15 +1,14 @@
-const { nav, siderbar } = require('./siderbar/index');
+const { nav } = require('./siderbar/index');
 const path = require('path');
 module.exports = {
   // 相对路径
-  configureWebpack: {
-    resolve: {
-      alias: {
-        '@assets': path.resolve(__dirname, '../assets')
-      }
-    }
-  },
-
+  // configureWebpack: {
+  //   resolve: {
+  //     alias: {
+  //       '@assets': path.resolve(__dirname, '../assets')
+  //     }
+  //   }
+  // },
   title: '小憩时光',
   description: '小憩时光',
   themeConfig: {
@@ -17,8 +16,7 @@ module.exports = {
     //导航栏链接
     nav: nav,
     sidebarDepth: 2, //菜单深度2级，它将同时提取h2和h3标题
-    //侧边栏
-    sidebar: siderbar
+    sidebar: 'auto'
   },
   base: '', //打包出来的路径
   dest: './docs/.vuepress/dist', //打包输入的文件路径前缀

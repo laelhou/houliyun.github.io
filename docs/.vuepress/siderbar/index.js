@@ -2,10 +2,22 @@ module.exports = {
   nav: [
     { text: '大厨指北', link: '/guide/' },
     {
-      text: '技术积累',
+      text: '前端',
       items: [
-        { text: '前端', link: '/diary/' },
+        {
+          text: 'MarkDown语法',
+          link: '/frontEnd/markdown/',
+        },
         { text: '后端', link: '/interest/' },
+      ],
+    },
+    {
+      text: '后端',
+      items: [
+        {
+          text: 'mark down语法',
+          link: '/frontEnd/',
+        },
       ],
     },
     {
